@@ -20,7 +20,6 @@ class Button extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: Colors.grey, width: 3),
-              // shape: BoxShape.rectangle
               borderRadius: const BorderRadius.all(Radius.circular(12))),
           child: Text(textButton,
               textAlign: TextAlign.center, style: TextStyle(fontSize: 20)),

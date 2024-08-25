@@ -28,13 +28,12 @@ class AppRoutes {
     final args = settings.arguments as Map<String, dynamic>?;
     switch (settings.name) {
       case '/songDetails':
-        // final Map<String,dynamic> data =
         final Song? song = args?['song'];
         final int songId = song?.id ?? 0;
         return MaterialPageRoute(
           builder: (context) => SongDetails(
             songId: songId ?? 0,
-          ), // Provide a default song if null
+          ), 
         );
       default:
     }

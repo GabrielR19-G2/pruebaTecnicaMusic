@@ -35,20 +35,16 @@ class SongsBloc extends Bloc<SongsEvent, SongsState> {
 
   void onGetSongDetail(GetSongDetail event, Emitter<SongsState> emit) async {
     try {
-      // emit(state.copyWith(status: SongsStatus.loading));
       emit(state.copyWith(status: SongsStatus.loading));
-      // Future.delayed(Duration(milliseconds: 5000));
       var songId = event.songId;
       if (songId > 0) {
         final response = await http.get(Uri.parse(
             'https://binteapi.com:4011/api/songs/examen/detail/$songId'));
         if (response.statusCode == 200) {
-          // emit(state.copyWith(status: SongsStatus.success));
           final jsonResponse = jsonDecode(response.body);
           final songResponse = jsonResponse['data'];
           final song = Song.fromJson(songResponse);
 
-          // print(songsJson.first.name);
           print(song.author);
           emit(state.copyWith(status: SongsStatus.success, songDetail: song));
         }

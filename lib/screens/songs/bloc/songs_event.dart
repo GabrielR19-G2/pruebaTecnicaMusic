@@ -1,4 +1,3 @@
-// part of 'songs_bloc.dart';
 
 abstract class SongsEvent {}
 

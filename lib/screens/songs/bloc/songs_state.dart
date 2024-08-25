@@ -1,10 +1,8 @@
-// part of 'songs_bloc.dart';
 
 import 'package:music_app/models/song.dart';
 
 enum SongsStatus { loading, success, error, initial }
 
-// abstract class SongsState {}
 
 class SongsState {
   SongsState({

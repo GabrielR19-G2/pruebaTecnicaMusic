@@ -31,7 +31,6 @@ class Song {
     this.letter,
   });
 
-  // Factory method to create a Song from JSON
   factory Song.fromJson(Map<String, dynamic> json) {
     return Song(
       id: json['id'],
@@ -51,7 +50,6 @@ class Song {
     );
   }
 
-  // Method to convert a Song to JSON
   Map<String, dynamic> toJson() {
     return {
       'id': id,

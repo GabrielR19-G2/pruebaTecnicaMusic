@@ -6,12 +6,6 @@ import 'package:music_app/screens/songs/bloc/songs_state.dart';
 import 'package:music_app/widgets/loading_screen.dart';
 
 class ListSongsScreen extends StatelessWidget {
-  final options = const [
-    'Megaman',
-    'Metal Gear',
-    'Super Smash',
-    'Final Fantasy'
-  ];
   const ListSongsScreen({super.key});
 
   @override
@@ -20,7 +14,6 @@ class ListSongsScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Canciones disponibles'),
         ),
-        // body: ListView.Bu(
         body: BlocProvider(
           create: (context) => SongsBloc()..add(GetSongsList()),
           child: BlocBuilder<SongsBloc, SongsState>(
@@ -29,7 +22,6 @@ class ListSongsScreen extends StatelessWidget {
                 return const LoadingScreen();
               }
               return ListView.separated(
-                // itemBuilder: (context, index) => ...options.map((e) => ListTile(title: Text(e.game),)),
                 itemCount: state.listSongs?.length ?? 0,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
@@ -58,7 +50,7 @@ class ListSongsScreen extends StatelessWidget {
                   );
                 },
                 separatorBuilder: (BuildContext context, int index) {
-                  return Divider();
+                  return const Divider();
                 },
               );
             },
